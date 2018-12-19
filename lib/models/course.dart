@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class Lesson {
+class Course {
   final Image icon;
   final String title;
   final int current;
   final int total;
 
-  const Lesson({this.icon, this.title, this.current, this.total});
+  const Course({this.icon, this.title, this.current, this.total});
 
-  Lesson.fromJson(jsonData)
+  Course.fromJson(jsonData)
       : icon = Image.asset("assets/images/${jsonData['icon']}.png"),
         title = jsonData['title'],
         current = jsonData['current'],
