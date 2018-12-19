@@ -15,7 +15,7 @@ class CourseView extends StatelessWidget {
       radius: progressHeight / 2,
       child: Padding(
         padding: const EdgeInsets.all(10.0),
-        child: lesson.icon,
+        child: Image.asset(lesson.icon),
       ),
     );
   }

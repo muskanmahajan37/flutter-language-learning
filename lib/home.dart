@@ -1,7 +1,8 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Drawer;
 
 import 'course.dart';
 import 'widgets/bottom_bar_button.dart';
+import 'widgets/drawer.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -20,6 +21,7 @@ class _HomeState extends State<Home> {
         backgroundColor: Colors.white,
         elevation: 0,
       ),
+      drawer: MainDrawer(),
       body: Stack(
         children: <Widget>[
           Visibility(
