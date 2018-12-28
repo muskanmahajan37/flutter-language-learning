@@ -5,12 +5,22 @@ import 'widgets/course_list.dart';
 class CourseScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.max,
-      children: <Widget>[
-        Header(),
-        CourseList(),
-      ],
+    return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        leading: InkWell(
+          child: Icon(Icons.outlined_flag),
+          customBorder: CircleBorder(),
+          onTap: Scaffold.of(context).openDrawer,
+        ),
+      ),
+      body: Column(
+        mainAxisSize: MainAxisSize.max,
+        children: <Widget>[
+          Header(),
+          CourseList(),
+        ],
+      ),
     );
   }
 }

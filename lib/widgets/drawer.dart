@@ -31,6 +31,23 @@ class _MainDrawerState extends State<MainDrawer> {
     });
   }
 
+  Widget _buildLanguageItem(BuildContext context, int index) {
+    final Language language = _languages[index];
+
+    return Material(
+      color: Colors.transparent,
+      child: ListTile(
+        leading: CircleAvatar(
+          radius: 20,
+          backgroundImage: AssetImage(language.icon),
+        ),
+        title: Text(language.name),
+        subtitle: Text(language.level),
+        onTap: () {},
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -49,32 +66,27 @@ class _MainDrawerState extends State<MainDrawer> {
           Flexible(
             child: ListView.builder(
               itemCount: _languages.length,
-              itemBuilder: (BuildContext context, int index) {
-                final Language language = _languages[index];
-
-                return Material(
-                  color: Colors.transparent,
-                  child: ListTile(
-                    leading: CircleAvatar(
-                      radius: 20,
-                      backgroundImage: AssetImage(language.icon),
-                    ),
-                    title: Text(language.name),
-                    subtitle: Text(language.level),
-                    onTap: () {},
-                  ),
-                );
-              },
+              itemBuilder: _buildLanguageItem,
             ),
           ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 16, vertical: 24),
             child: Row(
               children: <Widget>[
-                CircleAvatar(
-                  backgroundColor: Colors.blue,
-                  radius: 18,
+                Container(
+                  padding: EdgeInsets.all(8),
                   child: Icon(Icons.add, color: Colors.white),
+                  decoration: ShapeDecoration(
+                    shape: CircleBorder(),
+                    gradient: LinearGradient(
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
+                      colors: [
+                        Color(0xFF78B5FA),
+                        Color(0xFF9586FD),
+                      ],
+                    ),
+                  ),
                 ),
                 SizedBox(width: 16),
                 Text("Add a new language")

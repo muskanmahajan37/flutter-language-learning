@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart' hide Drawer;
 
 import 'course.dart';
+import 'questions.dart';
 import 'widgets/bottom_bar_button.dart';
 import 'widgets/drawer.dart';
 
@@ -10,23 +11,24 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
+
   int selectedTab = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        leading: Icon(Icons.outlined_flag),
-        backgroundColor: Colors.white,
-        elevation: 0,
-      ),
+      key: _scaffoldKey,
       drawer: MainDrawer(),
       body: Stack(
         children: <Widget>[
           Visibility(
             visible: selectedTab == 0,
             child: CourseScreen(),
+          ),
+          Visibility(
+            visible: selectedTab == 1,
+            child: QuestionScreen(),
           ),
         ],
       ),

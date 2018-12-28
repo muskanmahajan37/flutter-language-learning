@@ -13,6 +13,8 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.white,
         splashColor: Color(0xFFF2F6FF),
         highlightColor: Color(0x80F2F6FF),
+        backgroundColor: Colors.white,
+        scaffoldBackgroundColor: Colors.white,
       ),
       home: Home(),
     );
