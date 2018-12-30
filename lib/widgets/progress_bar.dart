@@ -20,19 +20,22 @@ class ProgressBar extends StatelessWidget {
     return Container(
       width: width,
       height: height,
-      alignment: Alignment.bottomCenter,
+      alignment: vertical ? Alignment.bottomCenter : Alignment.centerLeft,
       decoration: ShapeDecoration(
         shape: StadiumBorder(),
         color: backgroundColor,
       ),
       child: FractionallySizedBox(
-        heightFactor: percent,
+        widthFactor: vertical ? 1 : percent,
+        heightFactor: vertical ? percent : 1,
         child: Container(
           decoration: ShapeDecoration(
             shape: StadiumBorder(),
             gradient: LinearGradient(
-              begin: Alignment(0, percent == 0 ? 0 : -1 / percent),
-              end: Alignment.bottomCenter,
+              begin: vertical
+                  ? Alignment(0, percent == 0 ? 0 : -1 / percent)
+                  : Alignment(percent == 0 ? 0 : 1 / percent, 0),
+              end: vertical ? Alignment.bottomCenter : Alignment.centerLeft,
               colors: [
                 Color(0xFF9B8DFE),
                 Color(0xFF7FBBFB),

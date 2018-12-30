@@ -1,21 +1,21 @@
 [
   {
-    "icon": "lang_french",
+    "icon": "lang-french",
     "name": "French",
     "level": "Level 1"
   },
   {
-    "icon": "lang_german",
+    "icon": "lang-german",
     "name": "German",
     "level": "Level 1"
   },
   {
-    "icon": "lang_italian",
+    "icon": "lang-italian",
     "name": "Italian",
     "level": "Level 1"
   },
   {
-    "icon": "lang_spanish",
+    "icon": "lang-spanish",
     "name": "Spanish",
     "level": "Level 1"
   }

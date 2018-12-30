@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart' hide Drawer;
 
 import 'course.dart';
+import 'profile.dart';
 import 'questions.dart';
 import 'widgets/bottom_bar_button.dart';
 import 'widgets/drawer.dart';
@@ -29,6 +30,14 @@ class _HomeState extends State<Home> {
           Visibility(
             visible: selectedTab == 1,
             child: QuestionScreen(),
+          ),
+          Visibility(
+            visible: selectedTab == 2,
+            child: Container(),
+          ),
+          Visibility(
+            visible: selectedTab == 3,
+            child: ProfileScreen(),
           ),
         ],
       ),

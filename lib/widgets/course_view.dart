@@ -33,6 +33,7 @@ class CourseView extends StatelessWidget {
             percent: lesson.current / lesson.total,
             width: 4,
             height: progressHeight,
+            vertical: true,
           ),
         ],
       ),
